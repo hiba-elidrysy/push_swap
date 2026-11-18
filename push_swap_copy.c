@@ -6,7 +6,7 @@
 /*   By: hel-idry <hel-idry@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 21:42:43 by hel-idry          #+#    #+#             */
-/*   Updated: 2026/11/18 18:17:21 by hel-idry         ###   ########.fr       */
+/*   Updated: 2026/11/18 18:22:24 by hel-idry         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -486,6 +486,8 @@ int main(int argc, char **argv)
         n = n->next;
     }
     printf("list size : %d\n", list_size(head_a));
+    printf("disorder : %f\n", compute_disorder(&head_a));
+
     
     printf("after swap------\n");
     ft_swap(&head_a, size_a);
