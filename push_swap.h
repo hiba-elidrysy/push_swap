@@ -6,6 +6,10 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#define sa ft_swap(&heada)
+#define sb ft_swap(&headb)
+#define ss 
+
 
 
 typedef struct s_list t_list;
@@ -16,6 +20,15 @@ typedef struct s_list
     t_list  *next;
 }   t_list;
 
-
+t_list  *new_node(int data);
+void    add_front(t_list **head, t_list *new);
+void    add_back(t_list **head, t_list *new);
+void    ft_swap(t_list  **head);
+void    delete_front(t_list **head);
+void    ft_push(t_list **h1, t_list **h2);
+void    ft_rotate(t_list **head);
+void    ft_reverse_rotate(t_list **head);
+void    delete_list(t_list *head);
+t_list  *new_list(int *tab, int size);
 
 #endif
