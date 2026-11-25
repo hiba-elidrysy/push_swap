@@ -27,12 +27,20 @@ t_list  *new_node(int data);
 t_list  *new_list(int *tab, int size);
 void    add_front(t_list **head, t_list *new);
 void    add_back(t_list **head, t_list *new);
-void    ft_swap(t_list  **head);
+int    ft_swap(t_list  **head, int c);
 void    delete_front(t_list **head);
-void    ft_push(t_list **h1, t_list **h2);
-void    ft_rotate(t_list **head);
-void    ft_reverse_rotate(t_list **head);
+int    ft_push(t_list **h1, t_list **h2, int c);
+int    ft_rotate(t_list **head, int c);
+int    ft_reverse_rotate(t_list **head, int c);
 void    delete_list(t_list *head);
 int list_size(t_list *head);
+int ft_strlen(const char *str);
+char *ft_strjoin(const char **str, int count);
+char    **ft_split(const char *str);
+void ft_putchar(const char *str);
+int ft_atoi(const char *str);
+int count_nbr(const char *str);
+char    **ft_split(const char *str);
+void    show_list(t_list *head);
 
 #endif

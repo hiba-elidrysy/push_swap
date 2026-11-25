@@ -1,6 +1,22 @@
 
 #include "push_swap.h"
 
+int ft_strlen(const char *str)
+{
+    int count;
+
+    count = 0;
+    while (*str++)
+        count++;
+    return (count);
+}
+
+void ft_putchar(const char *str)
+{
+    while(*str)
+        write(1, str++, 1);
+}
+
 t_list  *new_node(int data)
 {
     t_list  *new;
@@ -37,16 +53,21 @@ void    add_back(t_list **head, t_list *new)
         tmp = tmp->next;
     tmp->next = new;
 }
-void    ft_swap(t_list  **head)
+int    ft_swap(t_list  **head, int c)
 {
     t_list  *tmp;
 
     if(!(*head) || !(*head)->next)
-        return ;
+        return 0;
     tmp = (*head)->next;
     (*head)->next = tmp->next;
     tmp->next = *head;
     *head = tmp;
+    if (c == 'a')
+        ft_putchar("sa\n");
+    else if (c == 'b')
+        ft_putchar("sb\n");
+    return (1);
 }
 void    delete_front(t_list **head)
 {
@@ -60,25 +81,30 @@ void    delete_front(t_list **head)
 
 }
 
-void    ft_push(t_list **h1, t_list **h2)
+int    ft_push(t_list **h1, t_list **h2, int c)
 {
     t_list  *tmp;
 
     if(!(*h2))
-        return ;
+        return (0);
     tmp = *h2;
     *h2 = (*h2)->next;
     tmp->next = NULL;
     add_front(h1, tmp);
+    if (c == 'a')
+        ft_putchar("pa\n");
+    else if (c == 'b')
+        ft_putchar("pb\n");
+    return (1);
 }
 
-void    ft_rotate(t_list **head)
+int    ft_rotate(t_list **head, int c)
 {
     t_list  *last;
     t_list  *next;
 
     if(!(*head) || !((*head)->next))
-        return ;
+        return (0);
     last = *head;
     while(last->next)
         last = last->next;
@@ -86,15 +112,20 @@ void    ft_rotate(t_list **head)
     (*head)->next = NULL;
     last->next = *head;
     *head = next;
+    if (c == 'a')
+        ft_putchar("ra\n");
+    else if (c == 'b')
+        ft_putchar("rb\n");
+    return (1);
 }
 
-void    ft_reverse_rotate(t_list **head)
+int    ft_reverse_rotate(t_list **head, int c)
 {
     t_list  *last;
     t_list  *prev;
 
     if(!(*head) || !((*head)->next))
-        return ;
+        return (0);
     last = *head;
     while(last->next)
     {
@@ -104,6 +135,11 @@ void    ft_reverse_rotate(t_list **head)
     prev->next = NULL;
     last->next = *head;
     *head = last;
+    if (c == 'a')
+        ft_putchar("rra\n");
+    else if (c == 'b')
+        ft_putchar("rrb\n");
+    return (1);
 }
 
 void    delete_list(t_list *head)
@@ -153,6 +189,17 @@ int list_size(t_list *head)
         head = head->next;
     }
     return (count);
+}
+
+void    show_list(t_list *head)
+{
+    ft_putchar("top : ");
+    while(head)
+    {
+        printf("| %d | -> ", head->data);
+        head = head->next;
+    }
+    ft_putchar("NULL : bottom\n");
 }
 
 // int main()
