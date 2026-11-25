@@ -142,55 +142,117 @@ t_list  *new_list(int *tab, int size)
     return (head);
 }
 
-int main()
+int list_size(t_list *head)
 {
-    t_list  *heada;
-    t_list  *headb;
-    t_list  *n;
-    int tab1[] = {9, 5 , 7, 0, -1};
-    int tab2[] = {2, 7 , -8, 1, 20};
-    int size1 = sizeof(tab1) / sizeof(int);
-    int size2 = sizeof(tab2) / sizeof(int);
-
-    heada = new_list(tab1, 5);
-    n = heada;
-    printf("----------stack a---------\n");
-    printf("top\n");
-    while(n)
+    int count;
+    
+    count = 0;
+    while(head)
     {
-        printf("node : %d\n", n->data);
-        n = n->next;
+        count++;
+        head = head->next;
     }
-    printf("bottom\n");
-
-    headb = new_list(tab2, 5);
-    n = headb;
-    printf("----------stack b---------\n");
-    printf("top\n");
-    while(n)
-    {
-        printf("node : %d\n", n->data);
-        n = n->next;
-    }
-    printf("bottom\n");
-
-    printf("----------sa---------\n");
-    sa;
-    n = heada;
-    printf("----------stack a---------\n");
-    printf("top\n");
-    while(n)
-    {
-        printf("node : %d\n", n->data);
-        n = n->next;
-    }
-    printf("bottom\n");
-    delete_list(heada);
-    delete_list(headb);
-
-
-    return (0);
+    return (count);
 }
+
+// int main()
+// {
+//     t_list  *heada;
+//     t_list  *headb;
+//     t_list  *n;
+//     int tab1[] = {5, -1, 0, 2};
+//     // int tab2[] = {2, 7 , -8, 1, 20};
+//     int size1 = sizeof(tab1) / sizeof(int);
+
+//     heada = new_list(tab1, size1);
+//     headb = NULL;
+//     n = heada;
+//     printf("----------stack a---------\n");
+//     printf("top : ");
+//     while(n)
+//     {
+//         printf("| %d | -> ", n->data);
+//         n = n->next;
+//     }
+//     printf("NULL : bottom\n");
+//     printf("list size a : %d\n", list_size(heada));
+
+//     printf("----------pb---------\n");
+//     pb;
+//     n = headb;
+//     printf("----------stack b---------\n");
+//     printf("top : ");
+//     while(n)
+//     {
+//         printf("| %d | -> ", n->data);
+//         n = n->next;
+//     }
+//     printf("NULL : bottom\n");
+//     n = heada;
+//     printf("----------stack a---------\n");
+//     printf("top : ");
+//     while(n)
+//     {
+//         printf("| %d | -> ", n->data);
+//         n = n->next;
+//     }
+//     printf("NULL : bottom\n");
+//     printf("list size a : %d\n", list_size(heada));
+//     delete_list(heada);
+//     delete_list(headb);
+//     return (0);
+// }
+
+
+// int main()
+// {
+//     t_list  *heada;
+//     t_list  *headb;
+//     t_list  *n;
+//     int tab1[] = {9, 5 , 7, 0, -1};
+//     int tab2[] = {2, 7 , -8, 1, 20};
+//     int size1 = sizeof(tab1) / sizeof(int);
+//     int size2 = sizeof(tab2) / sizeof(int);
+
+//     heada = new_list(tab1, 5);
+//     n = heada;
+//     printf("----------stack a---------\n");
+//     printf("top\n");
+//     while(n)
+//     {
+//         printf("node : %d\n", n->data);
+//         n = n->next;
+//     }
+//     printf("bottom\n");
+
+//     headb = new_list(tab2, 5);
+//     n = headb;
+//     printf("----------stack b---------\n");
+//     printf("top\n");
+//     while(n)
+//     {
+//         printf("node : %d\n", n->data);
+//         n = n->next;
+//     }
+//     printf("bottom\n");
+
+//     printf("----------sa---------\n");
+//     sa;
+//     n = heada;
+//     printf("----------stack a---------\n");
+//     printf("top\n");
+//     while(n)
+//     {
+//         printf("node : %d\n", n->data);
+//         n = n->next;
+//     }
+//     printf("bottom\n");
+//     delete_list(heada);
+//     delete_list(headb);
+
+
+//     return (0);
+// }
 
 // int main()
 // {

@@ -8,7 +8,10 @@
 
 #define sa ft_swap(&heada)
 #define sb ft_swap(&headb)
-#define ss 
+#define pa ft_push(&heada, &headb)
+#define pb ft_push(&headb, &heada)
+#define ra ft_rotate(&heada)
+#define rb ft_rotate(&headb)
 
 
 
@@ -21,6 +24,7 @@ typedef struct s_list
 }   t_list;
 
 t_list  *new_node(int data);
+t_list  *new_list(int *tab, int size);
 void    add_front(t_list **head, t_list *new);
 void    add_back(t_list **head, t_list *new);
 void    ft_swap(t_list  **head);
@@ -29,6 +33,6 @@ void    ft_push(t_list **h1, t_list **h2);
 void    ft_rotate(t_list **head);
 void    ft_reverse_rotate(t_list **head);
 void    delete_list(t_list *head);
-t_list  *new_list(int *tab, int size);
+int list_size(t_list *head);
 
 #endif
