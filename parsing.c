@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int count_nbr(const char *str)
+int count_char_numbers(const char *str)
 {
     int x;
     int i;
@@ -31,7 +31,7 @@ int count_nbr(const char *str)
     return (count);
 }
 
-char *put_chr(const char *str, int *i)
+char *put_char_number(const char *str, int *i)
 {
     int count;
     int j;
@@ -70,6 +70,22 @@ void    num_free(char **num, int k)
         free(num[i++]);
 }
 
+
+int verify_dup(char **num, int k)
+{
+    int i;
+    int x;
+
+    i = 0;
+    while (i < k)
+    {
+        if(!ft_strcmp(num[i], num[k]))
+            return (1);
+        i++;
+    }
+    return (0);
+}
+
 char    **ft_split(const char *str)
 {
     int i;
@@ -77,7 +93,7 @@ char    **ft_split(const char *str)
     int count;
     char    **nbr;
     
-    count = count_nbr(str);
+    count = count_char_numbers(str);
     if (count == 0)
     {
         ft_putchar("Error\n");
@@ -91,14 +107,21 @@ char    **ft_split(const char *str)
     {
         while(str[i] == ' ')
             i++;
-        nbr[j] = put_chr(str, &i);
+        nbr[j] = put_char_number(str, &i);
         if(!nbr[j])
         {
             num_free(nbr, j);
             return (NULL);
         }
+        if(j > 0 && verify_dup(nbr, j))
+        {
+            ft_putchar("Error\n");
+            num_free(nbr, j + 1);
+            return (NULL);
+        }
         j++; 
     }
+
     return (nbr);
 }
 
@@ -132,10 +155,10 @@ char *ft_strjoin(const char **str, int count)
         else
             return(NULL);
     }
-    total = malloc(2 * len + 1);
+    total = malloc((2 * len) + 1);
     if (!total)
         return (NULL);
-    total[len] = '\0';
+    total[2 * len] = '\0';
     i = 1;
     k = 0;
     while(i < count)
@@ -151,28 +174,4 @@ char *ft_strjoin(const char **str, int count)
         i++;
     }
     return (total);
-}
-
-
-int ft_atoi(const char *str)
-{
-    long nbr;
-    int sign;
-
-    nbr = 0;
-    sign = 1;
-    while (*str == ' ')
-        str++;
-    if (*str == '+' || *str == '-')
-    {
-        if (*str == '-')
-            sign = -1;
-        str++;
-    }
-    while(*str >= '0' && *str <= '9')
-    {
-        nbr = nbr * 10 + (*str - '0');
-        str++;
-    }
-    return ((int)(nbr * sign));
 }
