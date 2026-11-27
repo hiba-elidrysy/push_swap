@@ -2,36 +2,36 @@
 
 //insertion sort list
 // version 1
-// int    insertion_sort(t_list **heada, t_list **headb)
-// {
-//     int size;
-//     int count;
-//     int ops;
+int    insertion_sort(t_list **heada, t_list **headb)
+{
+    int size;
+    int count;
+    int ops;
     
-//     ops = 0;
-//     if(*heada)
-//         ops += ft_push(headb, heada, 'b');
-//     while(*heada)
-//     {
-//         size = list_size(*headb);
-//         count = 1;
-//         while(size >= 1 && (*heada)->data < (*headb)->data)
-//         {
-//             ops += ft_rotate(headb, 'b');
-//             count++;
-//             size--;
-//         }
-//         ops += ft_push(headb, heada, 'b');
-//         while(count > 1)
-//         {
-//             ops += ft_reverse_rotate(headb, 'b');
-//             count--;
-//         }
-//     }
-//     while(*headb)
-//         ops += ft_push(heada, headb, 'a');
-//     return (ops);
-// }
+    ops = 0;
+    if(*heada)
+        ops += ft_push(headb, heada, 'b');
+    while(*heada)
+    {
+        size = list_size(*headb);
+        count = 1;
+        while(size >= 1 && (*heada)->data < (*headb)->data)
+        {
+            ops += ft_rotate(headb, 'b');
+            count++;
+            size--;
+        }
+        ops += ft_push(headb, heada, 'b');
+        while(count > 1)
+        {
+            ops += ft_reverse_rotate(headb, 'b');
+            count--;
+        }
+    }
+    while(*headb)
+        ops += ft_push(heada, headb, 'a');
+    return (ops);
+}
 
 // version 2
 // int    insertion_sort(t_list **heada, t_list **headb)
@@ -79,92 +79,92 @@
 // }
 
 //version 3
-int    insertion_sort(t_list **heada, t_list **headb)
-{
-    int     size;
-    int     pos;
-    int     max_pos;
-    int     i;
-    int     max;
-    int     ops;
-    t_list  *tmp;
-    t_list  *next;
+// int    insertion_sort(t_list **heada, t_list **headb)
+// {
+//     int     size;
+//     int     pos;
+//     int     max_pos;
+//     int     i;
+//     int     max;
+//     int     ops;
+//     t_list  *tmp;
+//     t_list  *next;
 
-    ops = 0;
-    if (*heada)
-        ops += ft_push(headb, heada, 'b');
-    while (*heada)
-    {
-        size = list_size(*headb);
-        pos = -1;
-        max_pos = 0;
-        max = (*headb)->data;
-        tmp = *headb;
-        i = 0;
-        while (i < size)
-        {
-            if (tmp->data > max)
-            {
-                max = tmp->data;
-                max_pos = i;
-            }
-            next = tmp->next;
-            if (!next)
-                next = *headb;
-            if (tmp->data > (*heada)->data
-                && (*heada)->data > next->data)
-            {
-                pos = (i + 1) % size;
-                break ;
-            }
-            tmp = tmp->next;
-            i++;
-        }
-        if (pos == -1)
-            pos = max_pos;
-        if (pos <= size / 2)
-        {
-            while (pos-- > 0)
-                ops += ft_rotate(headb, 'b');
-        }
-        else
-        {
-            i = size - pos;
-            while (i-- > 0)
-                ops += ft_reverse_rotate(headb, 'b');
-        }
-        ops += ft_push(headb, heada, 'b');
-    }
-    size = list_size(*headb);
-    max = (*headb)->data;
-    max_pos = 0;
-    tmp = *headb;
-    i = 0;
-    while (tmp)
-    {
-        if (tmp->data > max)
-        {
-            max = tmp->data;
-            max_pos = i;
-        }
-        tmp = tmp->next;
-        i++;
-    }
-    if (max_pos <= size / 2)
-    {
-        while (max_pos-- > 0)
-            ops += ft_rotate(headb, 'b');
-    }
-    else
-    {
-        i = size - max_pos;
-        while (i-- > 0)
-            ops += ft_reverse_rotate(headb, 'b');
-    }
-    while (*headb)
-        ops += ft_push(heada, headb, 'a');
-    return (ops);
-}
+//     ops = 0;
+//     if (*heada)
+//         ops += ft_push(headb, heada, 'b');
+//     while (*heada)
+//     {
+//         size = list_size(*headb);
+//         pos = -1;
+//         max_pos = 0;
+//         max = (*headb)->data;
+//         tmp = *headb;
+//         i = 0;
+//         while (i < size)
+//         {
+//             if (tmp->data > max)
+//             {
+//                 max = tmp->data;
+//                 max_pos = i;
+//             }
+//             next = tmp->next;
+//             if (!next)
+//                 next = *headb;
+//             if (tmp->data > (*heada)->data
+//                 && (*heada)->data > next->data)
+//             {
+//                 pos = (i + 1) % size;
+//                 break ;
+//             }
+//             tmp = tmp->next;
+//             i++;
+//         }
+//         if (pos == -1)
+//             pos = max_pos;
+//         if (pos <= size / 2)
+//         {
+//             while (pos-- > 0)
+//                 ops += ft_rotate(headb, 'b');
+//         }
+//         else
+//         {
+//             i = size - pos;
+//             while (i-- > 0)
+//                 ops += ft_reverse_rotate(headb, 'b');
+//         }
+//         ops += ft_push(headb, heada, 'b');
+//     }
+//     size = list_size(*headb);
+//     max = (*headb)->data;
+//     max_pos = 0;
+//     tmp = *headb;
+//     i = 0;
+//     while (tmp)
+//     {
+//         if (tmp->data > max)
+//         {
+//             max = tmp->data;
+//             max_pos = i;
+//         }
+//         tmp = tmp->next;
+//         i++;
+//     }
+//     if (max_pos <= size / 2)
+//     {
+//         while (max_pos-- > 0)
+//             ops += ft_rotate(headb, 'b');
+//     }
+//     else
+//     {
+//         i = size - max_pos;
+//         while (i-- > 0)
+//             ops += ft_reverse_rotate(headb, 'b');
+//     }
+//     while (*headb)
+//         ops += ft_push(heada, headb, 'a');
+//     return (ops);
+// }
 
 
 // version 4

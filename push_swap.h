@@ -9,13 +9,18 @@
 #include "printfmine/ft_printf.h"
 
 
-#define sa ft_swap(&heada)
-#define sb ft_swap(&headb)
-#define pa ft_push(&heada, &headb)
-#define pb ft_push(&headb, &heada)
-#define ra ft_rotate(&heada)
-#define rb ft_rotate(&headb)
-
+#define sa sa(&heada, &headb);
+#define sb sb(&heada, &headb);
+#define ss ss(&heada, &headb);
+#define pa pa(&heada, &headb);
+#define pb pb(&heada, &headb);
+#define pp pp(&heada, &headb);
+#define ra ra(&heada, &headb);
+#define rb rb(&heada, &headb);
+#define rr rr(&heada, &headb);
+#define rra rra(&heada, &headb);
+#define rrb rrb(&heada, &headb);
+#define rrr rrr(&heada, &headb);
 
 
 typedef struct s_list t_list;
