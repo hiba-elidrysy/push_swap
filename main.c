@@ -38,17 +38,17 @@ int main(int argc, char **argv)
         i++;
     }
     heada = new_list(num, count);
-    printf("-----Before sorting------\n");
+    ft_printf("-----Before sorting------\n");
     show_list(heada);
     
 
-    printf("flag %d\n", flags);
-    printf("-----After sorting------\n");
+    ft_printf("flag %d\n", flags);
+    ft_printf("-----After sorting------\n");
     ops = ft_sorting(&heada, &headb, flags);
     show_list(heada);
 
-    printf("number of ops : %d\n", ops);
-    printf("size of stack a : %d\n", list_size(heada));
+    ft_printf("number of ops : %d\n", ops);
+    ft_printf("size of stack a : %d\n", list_size(heada));
 
 
     delete_list(heada);
@@ -79,7 +79,7 @@ int main(int argc, char **argv)
 //     }
 //     i = 0;
 //     while(i < count)
-//         printf("num %d\n", num[i++]);
+//         ft_printf("num %d\n", num[i++]);
     
 //     return (0);
 // }

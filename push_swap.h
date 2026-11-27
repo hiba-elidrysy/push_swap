@@ -6,6 +6,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#include "printfmine/ft_printf.h"
+
+
 #define sa ft_swap(&heada)
 #define sb ft_swap(&headb)
 #define pa ft_push(&heada, &headb)
@@ -61,6 +64,21 @@ int is_flag(char *str);
 int ft_adaptive(t_list **heada, t_list **headb);
 int ft_sorting(t_list **heada, t_list **headb, t_mode flags);
 float compute_disorder(t_list *head);
+
+
+// operations
+int sa(t_list **heada, t_list **headb);
+int sb(t_list **heada, t_list **headb);
+int ss(t_list **heada, t_list **headb);
+int pa(t_list **heada, t_list **headb);
+int pb(t_list **heada, t_list **headb);
+int pp(t_list **heada, t_list **headb);
+int ra(t_list **heada, t_list **headb);
+int rb(t_list **heada, t_list **headb);
+int rr(t_list **heada, t_list **headb);
+int rra(t_list **heada, t_list **headb);
+int rrb(t_list **heada, t_list **headb);
+int rrr(t_list **heada, t_list **headb);
 
 
 #endif

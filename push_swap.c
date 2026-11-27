@@ -11,9 +11,9 @@ int    ft_swap(t_list  **head, int c)
     tmp->next = *head;
     *head = tmp;
     if (c == 'a')
-        ft_putchar("sa\n");
+        ft_printf("sa\n");
     else if (c == 'b')
-        ft_putchar("sb\n");
+        ft_printf("sb\n");
     return (1);
 }
 
@@ -29,9 +29,9 @@ int    ft_push(t_list **h1, t_list **h2, int c)
     tmp->next = NULL;
     add_front(h1, tmp);
     if (c == 'a')
-        ft_putchar("pa\n");
+        ft_printf("pa\n");
     else if (c == 'b')
-        ft_putchar("pb\n");
+        ft_printf("pb\n");
     return (1);
 }
 
@@ -50,9 +50,9 @@ int    ft_rotate(t_list **head, int c)
     last->next = *head;
     *head = next;
     if (c == 'a')
-        ft_putchar("ra\n");
+        ft_printf("ra\n");
     else if (c == 'b')
-        ft_putchar("rb\n");
+        ft_printf("rb\n");
     return (1);
 }
 
@@ -73,9 +73,9 @@ int    ft_reverse_rotate(t_list **head, int c)
     last->next = *head;
     *head = last;
     if (c == 'a')
-        ft_putchar("rra\n");
+        ft_printf("rra\n");
     else if (c == 'b')
-        ft_putchar("rrb\n");
+        ft_printf("rrb\n");
     return (1);
 }
 
