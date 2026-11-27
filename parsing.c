@@ -133,7 +133,7 @@ int is_valid(const char *str)
         return (0);
 }
 
-char *ft_strjoin(const char **str, int count)
+char *ft_strjoin(const char **str, int count, int pos)
 {
     int i;
     int j;
@@ -142,7 +142,7 @@ char *ft_strjoin(const char **str, int count)
     int len;
     char *total;
 
-    i = 1;
+    i = pos;
     len = 0;
     while (i < count)
     {
@@ -159,7 +159,7 @@ char *ft_strjoin(const char **str, int count)
     if (!total)
         return (NULL);
     total[2 * len] = '\0';
-    i = 1;
+    i = pos;
     k = 0;
     while(i < count)
     {
@@ -174,4 +174,25 @@ char *ft_strjoin(const char **str, int count)
         i++;
     }
     return (total);
+}
+
+
+
+int is_flag(char *str)
+{
+    char *flags[4];
+    int i;
+
+    flags[0] = "--adaptive";
+    flags[1] = "--simple";
+    flags[2] = "--medium";
+    flags[3] = "--complex";
+    i = 0;
+    while(i < 4)
+    {
+        if(!ft_strcmp(str, flags[i]))
+            return (i);
+        i++;
+    }
+    return (0);
 }

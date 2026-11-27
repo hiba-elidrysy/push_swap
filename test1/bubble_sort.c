@@ -2,11 +2,12 @@
 
 int main()
 {
-    int tab[] = {12, 9, 1, 0, 3 , 7, 0, -8};
+    int tab[] = {-1, -8, 5, 6, 1};
     int i;
     int j;
     int nbr;
     int size;
+    int k;
 
     // bubble sort
     i = 0;
@@ -22,18 +23,35 @@ int main()
                 tab[j] = tab[j + 1];
                 tab[j + 1] = nbr;
             }
+            
+            
+            
+            
+            k = 0;
+            while(k < (sizeof(tab) / sizeof(int)))
+            {
+                printf("%d ", tab[k]);
+                k++;
+            }
+            printf("\n");
+
+
+
+
+
             j++;
         }
+        printf("----\n");
         i++;
     }
 
-    // affichage
-    i = 0;
-    while(i < (sizeof(tab) / sizeof(int)))
-    {
-        printf("%d\n", tab[i]);
-        i++;
-    }
+    // // affichage
+    // k = 0;
+    // while(k < (sizeof(tab) / sizeof(int)))
+    // {
+    //     printf("%d\n", tab[k]);
+    //     k++;
+    // }
 
     return (0);
 }

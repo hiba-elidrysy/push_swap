@@ -11,13 +11,27 @@ int main(int argc, char **argv)
     t_list *headb;
     int ops = 0;
     
+    if (argc < 2)
+        return (0);
+
+    // printf("argv 1 : %s\n", argv[1]);
 
     heada = NULL;
     headb = NULL;
-    total = ft_strjoin((const char**)argv, argc);
+    if(is_flag(argv[1]))
+    {
+        total = ft_strjoin((const char**)argv, argc, 2);
+        // printf("is flag\n");
+    }
+    else
+    {
+        total = ft_strjoin((const char**)argv, argc, 1);
+        // printf("is not flag\n");
+    }
+
+    // printf("wtf\n");
     if(!total)
         return (0);
-    // printf("size : %d\n", count);
     if (total)
         str = ft_split(total);
     if (!str)
@@ -36,11 +50,14 @@ int main(int argc, char **argv)
     printf("-----before insertion sort------\n");
     show_list(heada);
     
-    printf("-----after selection sort------\n");
-    ops = selection_sort(&heada, &headb);
+    printf("-----after insertion sort------\n");
+    ops = insertion_sort(&heada, &headb);
     show_list(heada);
 
     printf("number of ops : %d\n", ops);
+    printf("size of stack a : %d\n", list_size(heada));
+
+
     delete_list(heada);
     delete_list(headb);
     return (0);

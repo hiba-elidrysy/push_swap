@@ -35,7 +35,7 @@ int    ft_reverse_rotate(t_list **head, int c);
 void    delete_list(t_list *head);
 int list_size(t_list *head);
 int ft_strlen(const char *str);
-char *ft_strjoin(const char **str, int count);
+char *ft_strjoin(const char **str, int count, int pos);
 char    **ft_split(const char *str);
 void ft_putchar(const char *str);
 int ft_atoi(const char *str);
@@ -47,6 +47,9 @@ int ft_strcmp(const char *s1, const char *s2);
 // sorts
 int insertion_sort(t_list **heada, t_list **headb);
 int selection_sort(t_list **heada, t_list **headb);
+int bubble_sort(t_list **heada, t_list **headb);
+
+int is_flag(char *str);
 
 
 #endif
