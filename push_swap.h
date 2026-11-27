@@ -23,6 +23,14 @@ typedef struct s_list
     t_list  *next;
 }   t_list;
 
+typedef enum s_mode
+{
+    adaptive,
+    simple,
+    medium,
+    complex
+}   t_mode;
+
 t_list  *new_node(int data);
 t_list  *new_list(int *tab, int size);
 void    add_front(t_list **head, t_list *new);
@@ -50,6 +58,9 @@ int selection_sort(t_list **heada, t_list **headb);
 int bubble_sort(t_list **heada, t_list **headb);
 
 int is_flag(char *str);
+int ft_adaptive(t_list **heada, t_list **headb);
+int ft_sorting(t_list **heada, t_list **headb, t_mode flags);
+float compute_disorder(t_list *head);
 
 
 #endif

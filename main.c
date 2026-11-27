@@ -10,26 +10,19 @@ int main(int argc, char **argv)
     t_list *heada;
     t_list *headb;
     int ops = 0;
+    t_mode flags;
     
     if (argc < 2)
         return (0);
 
-    // printf("argv 1 : %s\n", argv[1]);
-
     heada = NULL;
     headb = NULL;
-    if(is_flag(argv[1]))
-    {
+    flags = is_flag(argv[1]);
+    if(flags)
         total = ft_strjoin((const char**)argv, argc, 2);
-        // printf("is flag\n");
-    }
     else
-    {
         total = ft_strjoin((const char**)argv, argc, 1);
-        // printf("is not flag\n");
-    }
 
-    // printf("wtf\n");
     if(!total)
         return (0);
     if (total)
@@ -45,13 +38,13 @@ int main(int argc, char **argv)
         i++;
     }
     heada = new_list(num, count);
-    // printf("here ---- %d", heada->data);
-    // printf("%p\n", heada);
-    printf("-----before insertion sort------\n");
+    printf("-----Before sorting------\n");
     show_list(heada);
     
-    printf("-----after insertion sort------\n");
-    ops = insertion_sort(&heada, &headb);
+
+    printf("flag %d\n", flags);
+    printf("-----After sorting------\n");
+    ops = ft_sorting(&heada, &headb, flags);
     show_list(heada);
 
     printf("number of ops : %d\n", ops);
