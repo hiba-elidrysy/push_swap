@@ -14,7 +14,7 @@ int sb(t_list **heada, t_list **headb)
 int ss(t_list **heada, t_list **headb)
 {
     ft_printf("ss\n");
-    return (ft_swap(heada, 'ab') && ft_swap(headb, 'ab'));
+    return (ft_swap(heada, 0) && ft_swap(headb, 0));
 }
 
 // pushing
@@ -31,7 +31,7 @@ int pb(t_list **heada, t_list **headb)
 int pp(t_list **heada, t_list **headb)
 {
     ft_printf("pp\n");
-    return (ft_push(heada, headb, 'ab') && ft_push(headb, heada, 'ab'));
+    return (ft_push(heada, headb, 0) && ft_push(headb, heada, 0));
 }
 
 // rotating
@@ -48,7 +48,7 @@ int rb(t_list **heada, t_list **headb)
 int rr(t_list **heada, t_list **headb)
 {
     ft_printf("rr\n");
-    return (ft_rotate(heada, 'ab') && ft_rotate(headb, 'ab'));
+    return (ft_rotate(heada, 0) && ft_rotate(headb, 0));
 }
 
 // reversed rotating
@@ -65,5 +65,5 @@ int rrb(t_list **heada, t_list **headb)
 int rrr(t_list **heada, t_list **headb)
 {
     ft_printf("rrr\n");
-    return (ft_reverse_rotate(heada, 'ab') && ft_reverse_rotate(headb, 'ab'));
+    return (ft_reverse_rotate(heada, 0) && ft_reverse_rotate(headb, 0));
 }

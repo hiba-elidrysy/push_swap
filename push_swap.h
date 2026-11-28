@@ -8,21 +8,6 @@
 
 #include "printfmine/ft_printf.h"
 
-
-#define sa sa(&heada, &headb);
-#define sb sb(&heada, &headb);
-#define ss ss(&heada, &headb);
-#define pa pa(&heada, &headb);
-#define pb pb(&heada, &headb);
-#define pp pp(&heada, &headb);
-#define ra ra(&heada, &headb);
-#define rb rb(&heada, &headb);
-#define rr rr(&heada, &headb);
-#define rra rra(&heada, &headb);
-#define rrb rrb(&heada, &headb);
-#define rrr rrr(&heada, &headb);
-
-
 typedef struct s_list t_list;
 
 typedef struct s_list
@@ -30,6 +15,36 @@ typedef struct s_list
     int data;
     t_list  *next;
 }   t_list;
+
+
+// operations
+int sa(t_list **heada, t_list **headb);
+int sb(t_list **heada, t_list **headb);
+int ss(t_list **heada, t_list **headb);
+int pa(t_list **heada, t_list **headb);
+int pb(t_list **heada, t_list **headb);
+int pp(t_list **heada, t_list **headb);
+int ra(t_list **heada, t_list **headb);
+int rb(t_list **heada, t_list **headb);
+int rr(t_list **heada, t_list **headb);
+int rra(t_list **heada, t_list **headb);
+int rrb(t_list **heada, t_list **headb);
+int rrr(t_list **heada, t_list **headb);
+
+#define SA sa(heada, headb);
+#define SB sb(heada, headb);
+#define SS ss(heada, headb);
+#define PA pa(heada, headb);
+#define PB pb(heada, headb);
+#define PP pp(heada, headb);
+#define RA ra(heada, headb);
+#define RB rb(heada, headb);
+#define RR rr(heada, headb);
+#define RRA rra(heada, headb);
+#define RRB rrb(heada, headb);
+#define RRR rrr(heada, headb);
+
+
 
 typedef enum s_mode
 {
@@ -71,19 +86,6 @@ int ft_sorting(t_list **heada, t_list **headb, t_mode flags);
 float compute_disorder(t_list *head);
 
 
-// operations
-int sa(t_list **heada, t_list **headb);
-int sb(t_list **heada, t_list **headb);
-int ss(t_list **heada, t_list **headb);
-int pa(t_list **heada, t_list **headb);
-int pb(t_list **heada, t_list **headb);
-int pp(t_list **heada, t_list **headb);
-int ra(t_list **heada, t_list **headb);
-int rb(t_list **heada, t_list **headb);
-int rr(t_list **heada, t_list **headb);
-int rra(t_list **heada, t_list **headb);
-int rrb(t_list **heada, t_list **headb);
-int rrr(t_list **heada, t_list **headb);
 
 
 #endif

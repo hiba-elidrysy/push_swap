@@ -10,26 +10,26 @@ int    insertion_sort(t_list **heada, t_list **headb)
     
     ops = 0;
     if(*heada)
-        ops += ft_push(headb, heada, 'b');
+        ops += PB;
     while(*heada)
     {
         size = list_size(*headb);
         count = 1;
         while(size >= 1 && (*heada)->data < (*headb)->data)
         {
-            ops += ft_rotate(headb, 'b');
+            ops += RB;
             count++;
             size--;
         }
-        ops += ft_push(headb, heada, 'b');
+        ops += PB;
         while(count > 1)
         {
-            ops += ft_reverse_rotate(headb, 'b');
+            ops += RRB;
             count--;
         }
     }
     while(*headb)
-        ops += ft_push(heada, headb, 'a');
+        ops += PA;
     return (ops);
 }
 
